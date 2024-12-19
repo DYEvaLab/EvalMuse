@@ -36,11 +36,11 @@ run:
   # optimizer
   lr_sched: "linear_warmup_cosine_lr"
   init_lr: 1e-5
-  min_lr: 1e-6
+  min_lr: 0
   warmup_lr: 1e-8
   warmup_steps: 100
   weight_decay: 0.05
-  max_epoch: 4
+  max_epoch: 5
   batch_size_train: 14
   batch_size_eval: 16
   lr_layer_decay: 0.95 # layer-wise learning rate decay for the ViT 
