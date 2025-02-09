@@ -26,7 +26,7 @@ for item in data:
     
     # Calculate the average for each element in element_score
     element_score_avg = {
-        key: round(np.mean(values),6) for key, values in item["element_score"].items()
+        key: round(np.mean(values),6) for key, values in eval(item["element_score"]).items()
     }
     
     # Add averages to the current item
