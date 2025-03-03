@@ -1,9 +1,14 @@
 <div align="center">
    <h1>EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation</h1>
+   <i>How to evaluate Text to Image Generation Model properly?</i>
    <div>
       <!-- <a href="https://github.com/DYEvaLab/EvalMuse"><img src="https://img.shields.io/github/stars/DYEvaLab/EvalMuse"/></a> -->
-      <a href=""><img src="https://img.shields.io/badge/Arxiv-2309:1418-red"/></a>
-       <a href="https://huggingface.co/datasets/DY-Evalab/EvalMuse"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-green"></a>
+      <a href="https://arxiv.org/abs/2412.18150"><img src="https://img.shields.io/badge/Arxiv-2412.18150-red"/></a>
+      <a href="https://shh-han.github.io/EvalMuse-project/"><img src="https://img.shields.io/badge/EvalMuse-Website-green?logo=googlechrome&logoColor=green"/></a>
+      <a href="https://huggingface.co/datasets/DY-Evalab/EvalMuse"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-green"></a>
+      <a href="https://shh-han.github.io/EvalMuse-Leaderboard/#/"><img src="https://img.shields.io/badge/EvalMuse-Leaderboard-green?logo=socialblade&logoColor=green"/></a>
+      <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FDYEvaLab%2FEvalMuse&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false"/></a>
+      
    </div>
       <p align="center">
       <img src="assets/images/framework.png" alt="EvalMuse framework">
@@ -11,16 +16,46 @@
 </div>
 
 
-## Introduction
-EvalMuse-40K is a reliable and fine-grained benchmark designed to evaluate the performance of Text-to-Image (T2I) generation models. It comprises 40,000 image-text pairs with comprehensive human annotations for image-text alignment-related tasks.
+### Table of Contents
+- [Updates](#updates)
+- [Introduction](#introduction)
+- [Key Features](#keyfeatures)
+- [Getting Started](#gettingstarted)
+- [Data Statistics](#datastatistics)
+- [Submission Gudideline](#submission_gudide_line)
+- [Evaluation Method ToolKit](#evaluation_method_toolkit)
+- [Contributing](#contributing)
+- [Results](#results)
+- [Citation and Acknowledgement](#citation_and_acknowledgement)
 
+
+<a name="updates"></a>
+## :fire: Updates
+- [05/02/2025] **Our Dataset has been used in CVPR NTIRE Grand Challenge 2025!**: Two tracks are held based on our dataset EvalMuse, [Image-Text Alignment](https://codalab.lisn.upsaclay.fr/competitions/21220) and [Structure Distortion Detection](https://codalab.lisn.upsaclay.fr/competitions/21269). Welcome to participate! Tens of thousands of bonuses are prepared for top ranks(sponsor by ByteDance).
+- [13/12/2024] **Codes and Dataset** released: We releaded the traning part of evalmuse dataset(30k) and code of fga-blip2, which acheived SOTA performance in T2I model alignment evaluation.
+- [25/12/2024]
+   - **EvalMuse-40k Report** released: [![EvalMuse Report (arXiv)](https://img.shields.io/badge/EvalMuse-arXiv%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2412.18150).You can find our technical report on arxiv.<br/>
+   - **EvalMuse Leaderboard** released: [![EvalMuse Leaderboard (Website)](https://img.shields.io/badge/EvalMuse-Leaderboard-green?logo=socialblade&logoColor=green)](https://shh-han.github.io/EvalMuse-Leaderboard/#/). You can find EvalMuse leaderboard on our website.The leaderboard contains three tracks: T2I alignment metric ranking, T2I fidelity metric ranking and T2I model alignment abality ranking.
+
+
+<a name="introduction"></a>
+### Introduction
+EvalMuse-40K is a reliable and fine-grained benchmark designed to evaluate the performance of Text-to-Image (T2I) generation models. It comprises 40,000 image-text pairs with comprehensive human annotations for image-text alignment-related tasks.Based on this dataset, we proposed two methods to evaluate t2i alignment automatically: FGA-BLIP2 and PN-VQA.
+   </div>
+      <p align="center">
+      <img src="assets/images/EvalMuse-40k.png" alt="EvalMuse dataset">
+   </p>
+</div>
+
+<a name="keyfeatures"></a>
 ### Key Features
 
-- **Large-scale Dataset**: Includes 40,000 image-text pairs with over 1 million fine-grained human annotations.
+- **Large-scale T2I Evaluation Dataset**: Includes 40,000 image-text pairs with over 1 million fine-grained human annotations.
 - **Diversity and Reliability**: Employs strategies like balanced prompt sampling and data re-annotation to ensure diversity and reliability.
 - **Fine-grained Evaluation**: Categorizes elements during fine-grained annotation, allowing evaluation of specific skills at a granular level.
 - **New Evaluation Methods**: Introduces FGA-BLIP2 and PN-VQA methods for end-to-end fine-tuning and zero-shot fine-grained evaluation.
-
+- **Leader Board**:We are maintaining a ranking list of T2I models that updates weekly, shows the cutting-edge process of T2I models.
+<a name="gettingstarted"></a>
 ## Getting Started
 
 To use the EvalMuse-40K dataset and replicate the experiments, follow these steps:
@@ -57,7 +92,7 @@ To use the EvalMuse-40K dataset and replicate the experiments, follow these step
    ```bash
    sh scripts/eval.sh
    ```
-
+<a name="datastatistics"></a>
 ## Data Statistics
 
 - **Alignment Score Distribution**: It can be seen that the alignment scores are widely distributed, providing a rich sample for evaluating the consistency of existing models in metrics of image-text alignment with respect to human preferences.
@@ -76,8 +111,9 @@ Most categories have alignment scores around 50%, ensuring balanced positive and
    <img src="assets/images/element_combined.png" alt="element_distribution" width="50%">
 </p>
 
+<a name="results"></a>
 ## Results
-
+It is recommanded to find out detailed ranking results and fine-grained level analysis on our leaderboard website.[![EvalMuse Leaderboard (Website)](https://img.shields.io/badge/EvalMuse-Leaderboard-green?logo=socialblade&logoColor=green)](https://shh-han.github.io/EvalMuse-Leaderboard/#/)
 ### Results on overall alignment scores
 
 Quantitative comparison between our FGA-BLIP2 and other state-of-the-art methods which only use image-text pair to output overall alignment score on multiple benchmarks. Here, `var` refers to the variance optimization strategy, `os` represents the overall alignment score output by FGA-BLIP2, and `es_avg` is the average of the element scores output by FGA-BLIP2.
@@ -145,23 +181,43 @@ The table reports the overall image-text alignment scores and fine-grained align
 | SD v1.2              | 2.25         | 0.659     | 0.515    | 0.315    | 0.471   | 0.377    | 0.393  | 0.498  | 0.547 | 0.349    | 0.493   | 0.181    |
 
 
+<a name="submission_gudide_line"></a>
 ## Submission Gudideline
+
 
 Our EvalMuse-40K can be used to evaluate the following three tasks, including 
 - evaluating the correlation of the overall image-text alignment scores with human preferences, 
 - evaluating the correlation of the fine-grained image-text alignment scores  with human preferences,
 - evaluating the performance of the T2I model on the image-text alignment task.
 
-For evaluating model correlation with human preference, you can download our dataset from [[Huggingface](https://huggingface.co/datasets/DY-Evalab/EvalMuse)]. You can train with our training set (with human-annotated scores) and output the results of the model on the test set. Since the test set we don't provide human-annotated scores right now (they will be available later), you can email XXX.com to submit your result in json format and get the correlation with human preferences.
-
-For evaluating the graphical alignment performance of the T2I model, we recommend using FGA-BLIP2, which achieves good performance in both overall alignment and fine-grained alignment.
+For evaluating model correlation with human preference, you can download our dataset from [[Huggingface](https://huggingface.co/datasets/DY-Evalab/EvalMuse)]. You can train with our training set (with human-annotated scores) and output the results of the model on the test set. Since the test set we don't provide human-annotated scores right now (they will be available later), you can email `fanhaotian@bytedance.com` to submit your result in json format and get the correlation with human preferences.
 
 
+For evaluating the image-text alignment performance of the T2I model, we recommend using FGA-BLIP2, which achieves good performance in both overall alignment and fine-grained alignment.
+
+<a name="evaluation_method_toolkit"></a>
+## Evaluation Method Toolkit
+TBD
+
+
+
+<a name="contributing"></a>
 ## Contributing
 
 We welcome contributions to EvalMuse-40K. If you have ideas or bug reports, please open an issue or submit a pull request.
 
-
-## Citation
+<a name="citation_and_acknowledgement"></a>
+## Citation and Acknowledgement
 
 If you find EvalMuse-40K useful for your research, please consider cite our paper:
+```bibtex
+@misc{han2024evalmuse40kreliablefinegrainedbenchmark,
+      title={EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation}, 
+      author={Shuhao Han and Haotian Fan and Jiachen Fu and Liang Li and Tao Li and Junhui Cui and Yunqiu Wang and Yang Tai and Jingwei Sun and Chunle Guo and Chongyi Li},
+      year={2024},
+      eprint={2412.18150},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.18150}, 
+}
+```
