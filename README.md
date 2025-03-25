@@ -31,6 +31,7 @@
 
 <a name="updates"></a>
 ## :fire: Updates
+- [25/03/2025] **Offcial used in Seedream 2.0 Evaluation**: Our Benchmark and metric FGA-BLIP2 have been used in official technical report of DouBao T2I model:Seedream 2.0.Check the [technical report](https://arxiv.org/pdf/2503.07703) for details.
 - [05/02/2025] **Our Dataset has been used in CVPR NTIRE Grand Challenge 2025!**: Two tracks are held based on our dataset EvalMuse, [Image-Text Alignment](https://codalab.lisn.upsaclay.fr/competitions/21220) and [Structure Distortion Detection](https://codalab.lisn.upsaclay.fr/competitions/21269). Welcome to participate! Tens of thousands of bonuses are prepared for top ranks(sponsor by ByteDance).
 - [13/12/2024] **Codes and Dataset** released: We releaded the traning part of evalmuse dataset(30k) and code of fga-blip2, which acheived SOTA performance in T2I model alignment evaluation.
 - [25/12/2024]
